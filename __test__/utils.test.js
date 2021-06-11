@@ -6,7 +6,7 @@ describe('Test parseInputFile()', function () {
 
   it("test with mock data", (done) => {
     try {
-      const parsedInput = parseInputFile('../__test__/mock_input.txt');
+      const parsedInput = parseInputFile('./__test__/mock_input.txt');
       expect(parsedInput.length).toBe(2);
       expect(parsedInput[0].length).toBe(3);
       expect(parsedInput[0][0]).toBe(5);

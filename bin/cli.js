@@ -7,13 +7,6 @@ const {
 } = require('../index')
 
 
-function commaSeparatedList(value, dummyPrevious) {
-    const tokens = value.split(',')
-    return tokens.map((token) => {
-        return Number(token).valueOf()
-    })
-}
-
 try {
 
     program.version(pkg.version)

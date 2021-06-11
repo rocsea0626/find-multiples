@@ -7,11 +7,10 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
-    "commander": "^4.1.1",
-    "loglevel": "^1.7.1"
+    "commander": "^4.1.1"
   },
   "bin": {
-    "findMultiples": "bin/cli.js"
+    "find-multiples": "bin/cli.js"
   },
   "devDependencies": {
     "jest": "^24.9.0"

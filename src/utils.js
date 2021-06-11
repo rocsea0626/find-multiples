@@ -1,6 +1,5 @@
-const fs = require("fs")
-const path = require("path")
-const findMultiples = require("./findMultiples")
+const fs = require("fs");
+const path = require("path");
 
 /**
  * Read from input file and parse its content into 2 dimensional array
@@ -18,16 +17,13 @@ const findMultiples = require("./findMultiples")
  */
 const parseInputFile = (filename) => {
     try {
-        const result = [];
-        const rows = fs.readFileSync(path.resolve(__dirname, filename), 'utf-8').toString().split("\n");
-        // console.log(rows);
+        const parsedRows = [];
+        const rows = fs.readFileSync(path.resolve(filename), 'utf-8').toString().split("\n");
         rows.forEach((row) => {
-            // console.log(row);
-            const rowNums = [...row.split(' ').map((numStr) => Number.parseInt(numStr))];
-            // console.log(rowNums);
-            result.push(rowNums);
+            const parsedRow = [...row.split(' ').map((numStr) => Number.parseInt(numStr))];
+            parsedRows.push(parsedRow);
         })
-        return result;
+        return parsedRows;
     } catch (err) {
         throw err
     }
@@ -35,7 +31,7 @@ const parseInputFile = (filename) => {
 
 const writeToFile = (filename, multiplesArr) => {
     try {
-        const writeStream = fs.createWriteStream(path.resolve(__dirname, filename));
+        const writeStream = fs.createWriteStream(path.resolve(filename));
         multiplesArr.forEach((multiples) => {
             writeStream.write(multiples + '\n');
         })

@@ -1,7 +1,4 @@
 const findMultiples = require("../src/findMultiples");
-const log = require('loglevel');
-
-log.setLevel('debug');
 
 describe('Test findMultiples()', function () {
 
@@ -10,7 +7,6 @@ describe('Test findMultiples()', function () {
       try {
         const multiples = findMultiples();
       } catch (err) {
-        // log.debug(err);
         expect(err).toBeDefined();
       }
       done();
@@ -20,7 +16,7 @@ describe('Test findMultiples()', function () {
       try {
         const multiples = findMultiples(1);
       } catch (err) {
-        // log.debug(err);
+
         expect(err).toBeDefined();
       }
       done();
@@ -30,7 +26,7 @@ describe('Test findMultiples()', function () {
       try {
         const multiples = findMultiples(1, 2);
       } catch (err) {
-        // log.debug(err);
+
         expect(err).toBeDefined();
       }
       done();
@@ -40,7 +36,7 @@ describe('Test findMultiples()', function () {
       try {
         const multiples = findMultiples('1', 2, 3);
       } catch (err) {
-        // log.debug(err);
+
         expect(err).toBeDefined();
       }
       done();
@@ -50,7 +46,7 @@ describe('Test findMultiples()', function () {
       try {
         const multiples = findMultiples(1, undefined, 3);
       } catch (err) {
-        // log.debug(err);
+
         expect(err).toBeDefined();
       }
       done();
@@ -60,7 +56,7 @@ describe('Test findMultiples()', function () {
       try {
         const multiples = findMultiples(1, -2, -3);
       } catch (err) {
-        // log.debug(err);
+
         expect(err).toBeDefined();
       }
       done();
@@ -70,7 +66,7 @@ describe('Test findMultiples()', function () {
       try {
         const multiples = findMultiples(1, 2.3, 10);
       } catch (err) {
-        // log.debug(err);
+
         expect(err).toBeDefined();
       }
       done();
