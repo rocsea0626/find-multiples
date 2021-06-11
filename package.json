@@ -1,0 +1,21 @@
+{
+  "name": "multiples_of_x_y",
+  "version": "1.0.0",
+  "description": "This program takes a file as the 1st command line argument. The file content is list of numbers, with 3 numbers per row separated by space and number of rows is undefined (can be something between 1 - infinite). 1st number in a row is X and the 2nd is Y, 3rd is the goal number. The program searches all multiples of X and Y which are below the third number, print it out to screen and also write results to file which was given as the second command line argument.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "dependencies": {
+    "commander": "^4.1.1",
+    "loglevel": "^1.7.1"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
+  "keywords": [
+    "multiples"
+  ],
+  "author": "Guo Haipeng",
+  "license": "MIT"
+}
