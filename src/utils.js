@@ -30,14 +30,16 @@ const parseInputFile = (filename) => {
 }
 
 const writeToFile = (filename, multiplesArr) => {
+    let writeStream;
     try {
-        const writeStream = fs.createWriteStream(path.resolve(filename));
+        writeStream = fs.createWriteStream(path.resolve(filename));
         multiplesArr.forEach((multiples) => {
             writeStream.write(multiples + '\n');
         })
-        writeStream.end();
     } catch (err) {
-        throw err
+        throw err;
+    } finally {
+        writeStream.end();
     }
 }
 
