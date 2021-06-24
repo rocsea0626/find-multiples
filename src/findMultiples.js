@@ -10,12 +10,9 @@ module.exports = findMultiples = (x, y, limit) => {
   if (x <= 0 || y <= 0 || limit <= 0)
     throw new Error("findMultiples(): Parameters must be natural numbers");
 
-
-
   let currNum = x < y ? x : y;
   const multiples = [];
   for (currNum; currNum < limit; currNum++) {
-    // console.log(currNum);
     if (currNum % x === 0 || currNum % y === 0) {
       multiples.push(currNum);
     }

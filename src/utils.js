@@ -17,12 +17,8 @@ const path = require("path");
  */
 const parseInputFile = (filename) => {
     try {
-        const parsedRows = [];
         const rows = fs.readFileSync(path.resolve(filename), 'utf-8').toString().split("\n");
-        rows.forEach((row) => {
-            const parsedRow = [...row.split(' ').map((numStr) => Number.parseInt(numStr))];
-            parsedRows.push(parsedRow);
-        })
+        const parsedRows = rows.map((row) => [...row.split(' ').map((numStr) => Number.parseInt(numStr))]);
         return parsedRows;
     } catch (err) {
         throw err
@@ -30,16 +26,10 @@ const parseInputFile = (filename) => {
 }
 
 const writeToFile = (filename, multiplesArr) => {
-    let writeStream;
     try {
-        writeStream = fs.createWriteStream(path.resolve(filename));
-        multiplesArr.forEach((multiples) => {
-            writeStream.write(multiples + '\n');
-        })
+        fs.writeFileSync(path.resolve(filename), Buffer.from(multiplesArr.join('')).toString());
     } catch (err) {
-        throw err;
-    } finally {
-        writeStream.end();
+        throw err
     }
 }
 
@@ -49,7 +39,7 @@ const writeToFile = (filename, multiplesArr) => {
  * @param limit
  */
 const formatMultiples = (multiples, limit) => {
-    return `${limit}: ${multiples.join(' ')}`;
+    return `${limit}: ${multiples.join(' ')}\n`;
 }
 
 
